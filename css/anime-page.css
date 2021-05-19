@@ -1,0 +1,307 @@
+/*
+MAIN SETUPS
+as i was sayin in style.css those setups are no different from them
+those setups also helps to stuck footer to the end of the page
+we add local path to the fonts, we could use google fonts, but we didn't for e it was easier and it's for 100% working
+*/
+@font-face {
+	font-family: reg;
+	src: url("fonts/SourceSansPro-Regular.ttf");
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	font-family: reg, serif;
+	padding: 0;
+	margin: 0 auto;
+	background-image: url("../img/backs/light-1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+/*
+  ---HEADER---
+  Just a simple properties, i made logo space flex to align elements 
+  And we also set exact width and height to fit them into space perfectly
+  */
+.bar {
+	padding: 0 8px;
+	background-color: #1c2129;
+	height: 46px;
+	position: relative;
+	color: white;
+}
+.menu {
+	height: 46px;
+}
+.menu > div {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	float: left;
+	height: 46px;
+	padding: 0 5px;
+	margin-right: 405px;
+}
+.logo a{
+	display: flex;
+	align-items: center;
+}
+.glyph {
+	background-image: url("../img/icons/glyph.svg");
+	background-size: contain;
+	margin-right: 5px;
+	width: 26px;
+	height: 26px;
+}
+.logo-icon {
+	background-image: url("../img/icons/logo.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 190px;
+}
+.search {
+	outline: none;
+	height: 46px;
+	width: 25px;
+}
+.loop-icon {
+	content: url("../img/icons/loop.png")
+}
+input[type="text"] {
+	color: lightgrey;
+	outline: 0;
+	border: 0;
+	width: 0;
+	height: 30px;
+	margin-left: 15px;
+	font-size: 14px;
+	padding: 1px 1px 1px 3px;
+	background: transparent;
+	transition: width .35s ease-in-out;
+}
+input[type="text"]:focus{
+	width: 600px;
+	font-size: 14px;
+	border-bottom: 3px solid #828282;
+}
+
+.sign-in {
+	float: right;
+	height: 46px;
+}
+.sign-in a {
+	width: 25px;
+	height: 25px;
+}
+.signin-icon {
+	content: url("../img/icons/sign-in.png");
+}
+
+@font-face {
+	font-family: dap;
+	src: url("fonts/SourceSansPro-Regular.ttf");
+}
+@font-face {
+	font-family: reg;
+	src: url("fonts/SourceSansPro-Regular.ttf");
+}
+/*
+  ---MAIN---
+  we squeezed all content part to div named "page" which contain content part and footer to make footer stuck to the end of page
+  div class "h-m" contain header + main part. "h-m" is just a field like a little body. 
+  "main" is really content part where we place template for a title, i made paddings to "main" to be not stuck to borders
+  template consists 3 columns and 3 rows, grid is perfect cause we do not add any columns anymore as well as rows
+  */
+.page {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	min-height: 100%;
+	max-width: 1200px;
+	opacity: 0.9;
+}
+.h-m {
+	flex: 1 0 auto;
+	width: 100%;
+	margin: 0 auto;
+	background: white;
+	max-width: 1200px;
+	min-height: 100%;
+}
+/*
+  header was used just as container for a title name, we could also use div 
+  */
+header {
+	max-width: 1200px;
+	background: white;
+	color: black;
+	margin-bottom: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 20px;
+}
+/*
+  ---CONTENT PART---
+  i made it 20 20 50 cause title's plot need more space
+  content part is like a table, where we put general info about title
+  */
+.main {
+	display: grid;
+	grid-gap: 3%;
+	grid-template-columns: 20% 20% 50%;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 20px;
+}
+.seg-heading {
+	line-height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 10px;
+	margin-bottom: 5px;
+	border-left: 5px solid #d8dde4;
+	background: #e8ebef;
+	font-size: 18px;
+	letter-spacing: 0.13px;
+	font-weight: 700;
+}
+.title-pic {
+	grid-column: 1;
+	grid-row: 1 / span 3;
+}
+.title-info {
+	grid-column: 2;
+	grid-row: 1;
+}
+.type {
+	color: grey;
+	font-size: 12px;
+}
+.list li {
+	margin-bottom: 5px;
+	list-style-type: none;
+}
+/*
+  to make 5 star rating i used empty div but i put ::before and :: after 5 stars
+  before part is grey stars and they're at back and after part is blue stars
+  to make after part stand out i set after's z-index higher make it to be in front
+  Basically it's just 5 stars faced to another 5 stars, it's just simple
+  */
+.title-rating {
+	grid-column: 2;
+	grid-row: 2;
+}
+.rate {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.star-ratings-css {
+	unicode-bidi: bidi-override;
+	color: darkgrey;
+	font-size: 25px;
+	height: 25px;
+	width: 100px;
+	margin-left: 15px;
+	position: relative;
+}
+.star-ratings-css::before {
+	content: "★★★★★";
+	opacity: 0.3;
+}
+.star-ratings-css::after {
+	color: #4b96e6;
+	content: "★★★★★";
+	position: absolute;
+	z-index: 1;
+	display: block;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+.rating {
+	font-size: 30px;
+}
+.title-studio {
+	grid-column: 2;
+	grid-row: 3;
+}
+.st-name {
+	text-align: center;
+	font-size: 24px;
+}
+.st-name img {
+	max-width: 200px;
+	max-height: 190px;
+}
+.title-content {
+	grid-column: 3;
+	grid-row: 1 / span 3;
+}
+/*
+  ---FOOTER---
+  I made footer a grid container to perfectly align elements
+  however, if we need to add something i'll make it flex, it'll be much easier
+  */
+footer {
+	font-family: reg;
+	flex: 0 0 auto;
+	color: #828282;
+	display: grid;
+	justify-content: space-around;
+	line-height: 32px;
+	margin: 0;
+	height: px;
+	background-color: #1c2129;
+}
+.git {
+	grid-column: 1;
+	grid-row: 1;
+}
+.rights {
+	grid-column: 3;
+	grid-row: 1;
+}
+.hck {
+	grid-column: 2;
+	grid-row: 1;
+}
+.vki {
+	grid-column: 2;
+	grid-row: 1;
+}
+.git-icon {
+	content: url("../img/icons/github.png");
+}
+.hck-icon {
+	content: url("../img/icons/hck.png");
+}
+.link a {
+	color: #828282;
+	display: flex;
+	align-items: center;
+	height: 32px;
+	text-decoration: none;
+}
+.vki-icon {
+	content: url("../img/icons/vki.png");
+}
+/*
+  We did some decorations to scrollbar, that's it
+  */
+::-webkit-scrollbar {
+	width: 7px;
+}
+::-webkit-scrollbar-thumb {
+	background: #1c2129;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #434a53;
+}

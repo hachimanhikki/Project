@@ -1,0 +1,221 @@
+/*
+---MAIN SETUPS---
+we add background image and height is set to 100% to make footer stick to the end of page
+margin is set to zero to ged rid of spaces 
+*/
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	width: 100%;
+}
+
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0 auto;
+	background-image: url("../img/backs/light-1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+a {
+	text-decoration: none;
+}
+
+@font-face {
+	font-family: dap;
+	src: url("fonts/SourceSansPro-Regular.ttf");
+}
+@font-face {
+	font-family: reg;
+	src: url("fonts/SourceSansPro-Regular.ttf");
+}
+/*
+---MAIN---
+we squeezed all content part to div named "page" which contain content part and footer to make footer stuck to the end of page
+div class "h-m" contain header + main part. "h-m" is just a field like a little body. 
+"main" is really content part where we place titles and sidebar, i made paddings to "main" to be not stuck to borders
+*/
+.page {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	min-height: 100%;
+	max-width: 1200px;
+}
+.h-m {
+	flex: 1 0 auto;
+	width: 100%;
+	margin: 0 auto;
+	background: white;
+	max-width: 1200px;
+	min-height: 100%;
+}
+/*
+header was used just as container for a title name, we could also use div 
+*/
+header {
+	max-width: 1200px;
+	background: white;
+	color: black;
+	font-family: dap, serif;
+	padding: 20px 15px 25px 15px;
+}
+.heading {
+	margin-top: 0;
+	font-size: 30px;
+}
+.subheading {
+	font-size: 12px;
+	margin: 2px 0 2px 1px;
+}
+/*
+---CONTENT PART---
+TITLE FIELD + SIDEBAR
+*/
+.main {
+	font-family: reg, serif;
+	clear: both;
+	max-width: 1200px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 20px;
+	opacity: 0.9;
+}
+.titles {
+	float: left;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative;
+	width: 85%;
+}
+.title {
+	margin-bottom: 30px;
+	line-height: 1.65;
+	position: relative;
+	margin-right: 4%;
+	width: 25%;
+	max-width: 150.203px;
+}
+/*
+img-decor and img-cut helps to hide image part if it's too big, i use overflow hidden, so if it crosses the border it will be cut
+*/
+img {
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 1.65;
+}
+.img-decor {
+	display: block;
+	line-height: 0px;
+	position: relative;
+}
+.img-cut {
+	display: block;
+	line-height: 0;
+	overflow: hidden;
+	position: relative;
+	max-width: 150.203px;
+	max-height: 200.07px;
+}
+/*
+i used float to right to make an empty space  between title type and year
+overflow is hidden, because if title is too long, we could hide it 
+*/
+.title-align {
+	margin-top: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	display: block;
+	font-weight: bold;
+	line-height: 1.65;
+}
+.misc {
+	color: #555;
+	display: block;
+	font-size: 11px;
+	line-height: 17px;
+}
+.right {
+	float: right;
+}
+/*
+I think no need to comment, cause segment was the only one, we did not need to add much
+I just made heading stands out by making it grey colored
+*/
+.sidebar {
+	float: left;
+	width: 20.6%;
+}
+.seg-heading {
+	line-height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 10px;
+	margin-bottom: 5px;
+	border-left: 5px solid #d8dde4;
+	background: #e8ebef;
+	font-size: 18px;
+	letter-spacing: 0.13px;
+	font-weight: 700;
+}
+.sidebar .segment{
+	margin-bottom: 15px;
+}
+
+/*ADDED*/
+::-webkit-scrollbar {
+	width: 7px;
+}
+::-webkit-scrollbar-thumb {
+	background: #1c2129;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #434a53;
+}
+.link a {
+	color: #828282;
+	display: flex;
+	align-items: center;
+	height: 32px;
+}
+
+.title-name a {
+	color: #176093;
+}
+.title-name a:hover {
+	color: #042293;
+}
+.list {
+	margin-bottom: 5px;
+}
+.list a {
+	color: #176093;
+}
+.list a:hover {
+	color: #000177;
+}
+
+.list li {
+	list-style: none;
+	padding-left: 1em;
+	text-indent: -0.7em;
+}
+
+.list li::before {
+	content: "\2022";
+	color: #176093;
+	font-weight: bold;
+	margin-right: 20px;
+}

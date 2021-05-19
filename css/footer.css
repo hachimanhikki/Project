@@ -1,0 +1,41 @@
+/*
+---FOOTER---
+I made footer a grid container to perfectly align elements
+however, if we need to add something i'll make it flex, it'll be much easier
+*/
+footer {
+    font-family: reg;
+    flex: 0 0 auto;
+    color: #828282;
+    display: grid;
+    justify-content: space-around;
+    line-height: 32px;
+    margin: 0;
+    height: px;
+    background-color: #1c2129;
+}
+.git {
+    grid-column: 1;
+    grid-row: 1;
+}
+.rights {
+    grid-column: 3;
+    grid-row: 1;
+}
+.hck {
+    grid-column: 2;
+    grid-row: 1;
+}
+.vki {
+    grid-column: 2;
+    grid-row: 1;
+}
+.git-icon {
+    content: url("../img/icons/github.png");
+}
+.hck-icon {
+    content: url("../img/icons/hck.png");
+}
+.vki-icon {
+    content: url("../img/icons/vki.png");
+}
